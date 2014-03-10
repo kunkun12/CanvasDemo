@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制圆弧</title>
+	<script type="text/javascript">
+function beginPathclolsePaht(){
+	     var canvas = document.getElementById("mycanvas");
+              if (canvas == null) {
+                  return false;
+              }
+              var context = canvas.getContext('2d');
+             var n = 0;          
+              //左侧1/4圆弧
+             context.beginPath();
+              context.arc(100, 150, 50, 0, Math.PI/2 , false);
+             context.fillStyle = 'rgba(255,0,0,0.25)';
+             context.fill();
+             context.strokeStyle = 'rgba(255,0,0,0.25)'
+             context.closePath();
+             context.stroke();
+             //右侧1/4圆弧
+             context.beginPath();
+             context.arc(300, 150, 50, 0, Math.PI/2 , false);
+             context.fillStyle = 'rgba(255,0,0,0.25)';
+             context.fill();
+             context.strokeStyle = 'rgba(255,0,0,0.25)';
+             context.closePath();
+             context.stroke();
+         
+}
+	</script>
+</head>
+<body>
+	<input type='button' onclick='beginPathclolsePaht()' value='beginpath and close path'>
+	<canvas id='mycanvas' height="400" width='400'></canvas>
+</body>
+</html>

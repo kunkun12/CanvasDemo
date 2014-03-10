@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>绘制圆弧</title>
+	<script type="text/javascript">
+function drawarc(){
+	 var canvas = document.getElementById("mycanvas");
+              if (canvas == null) {
+                 return false;
+             }
+              var context = canvas.getContext('2d');
+             context.beginPath();
+             context.arc(200, 150, 100, 0, Math.PI * 2, true);
+             //不关闭路径路径会一直保留下去，当然也可以利用这个特点做出意想不到的效果
+             context.closePath();
+             context.fillStyle = 'rgba(0,255,0,0.25)';
+             context.fill();
+         
+}
+	</script>
+</head>
+<body>
+	<input type='button' onclick='drawarc()' value='绘制圆弧'>
+	<canvas id='mycanvas' height="300" width='600'></canvas>
+</body>
+</html>
